@@ -1,0 +1,28 @@
+//media query breakpoints
+$mobile-breakpoint: 320px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+//colours <-canadian spelling
+$brainflix-black: #323232;
+$brainflix-blue: #0095ff;
+$silver: #afafaf;
+$white: #ffffff;
+$red: #d22d2d;
+
+$brainflix-darkblack: #000000;
+$brainflix-darkblue: #0065ad;
+$mercury: #e1e1e1;
+$alabaster: #fafafa;
+
+$primary-text-color: $brainflix-black;
+$primary-call-to-action: $brainflix-blue;
+$secondary-text-color: $silver;
+$background-color: $white;
+
+$video-player-components: $brainflix-darkblack;
+$event-hover-state: $brainflix-darkblue;
+
+$form-field-outline: $mercury;
+$form-field-background: $alabaster;
+$form-field-outline-error: $red;
