@@ -71,9 +71,63 @@
   font-size: 0.625rem;
   line-height: 1.25rem;
   text-transform: uppercase;
+  color: $secondary-text-color;
   @include tablet {
     font-weight: 700;
     font-size: 0.75rem;
     line-height: 1.25rem;
   }
 }
+
+//iconography mixins
+@mixin button-default {
+    @include font-labelsbuttons;
+    @include mobile {
+      height: 2.5rem;
+      border-radius: 0.25rem;
+      background: $primary-call-to-action;
+      color: $white;
+      @include tablet {
+        width: 9.375rem;
+      }
+    }
+  }
+  
+  @mixin button-hover {
+    @include font-labelsbuttons;
+    @include mobile {
+      height: 2.5rem;
+      radius: 0.25rem;
+      background: $event-hover-state;
+      color: $white;
+      @include tablet {
+        width: 9.375rem;
+      }
+    }
+  }
+//32px of padding may be added for tablet/desktop buttons  
+
+@mixin logo {
+    height: 1.563rem;
+    width: 7.5rem;
+    background: $white;
+  }
+
+  @mixin icon {
+    fill: $secondary-text-color;
+  }
+
+  //formfield mixin
+  
+  @mixin form-field {
+    @include mobile {
+        height: 2.25rem;
+        border-radius: 0.25rem;
+        padding: 0.75rem;
+        @include tablet {
+            height: 2.5rem;
+            width: 15rem;
+            padding: 1rem;
+        }
+    }
+  }
