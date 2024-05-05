@@ -6,6 +6,7 @@ import videoDetails  from './data/video-details.json';
 import videos from './data/videos.json'
 import { Video } from './components/Component/Video.jsx'
 import { Article } from './components/Article/Article.jsx';
+import { Comments } from './components/Comments/Comments.jsx';
 
 // import { Avatar } from './components/Component/Avatar.jsx';
 // import AvatarImage from './assets/images/Mohan-muruge.jpg';
@@ -48,6 +49,9 @@ function App() {
     views={videoDetails[videoIndex].views}
     likes={videoDetails[videoIndex].likes}
     description={videoDetails[videoIndex].description}
+    />
+
+    <Comments
     />
 
     {/* "HI JOSEPH, do you have a technicolor dreamcoat?"

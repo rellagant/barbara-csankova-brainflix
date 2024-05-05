@@ -1,0 +1,52 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  margin: $mobile-between-component;
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 5.9375rem;
+  }
+  @include desktop {
+    justify-content: space-around;
+  }
+
+  &__count {
+    @include font-subheader;
+
+  }
+
+  &__input {
+    @include form-field;
+    border-color: $form-field-outline;
+    background: $form-field-background;
+    width: 14.6875rem;
+    padding: 0rem 1.5rem 3rem 0;
+    margin-bottom: $mobile-between-component;
+    @include tablet {
+      margin-right: 1.5rem;
+      width: 12.5rem;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    @include button-default;
+    border: $brainflix-blue;
+    width: 100%;
+    height: 2.25rem;
+
+  &-text {
+    position: absolute; 
+    left: 8rem;
+}
+}
+}
+
+label {
+    @include font-labelsbuttons;
+  }
