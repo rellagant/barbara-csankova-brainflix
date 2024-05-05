@@ -20,8 +20,6 @@ export function Header() {
             placeholder="Search..."
           />
 
-   
-
           <button className="header__button" type="submit">
             <img
               className="header__button-icon"
@@ -31,7 +29,7 @@ export function Header() {
             <h3 className="header__button-text">UPLOAD</h3>
           </button>
 
-          <Avatar/>
+          <Avatar />
         </nav>
       </header>
     </>
