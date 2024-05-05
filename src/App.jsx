@@ -63,4 +63,5 @@ export default App;
 //go back to restyle header search border - left margin on brainflix logo
 //go back to restyle mohan in avatar -- use the <> from under the header when you do
 //rename video to BEM in video component
+//redo foldering of components
 
