@@ -1,0 +1,82 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+// * {
+//     border: 1px solid fuchsia;
+// }
+
+.article {
+  display: flex;
+  margin: 0 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-top: $border-divider;
+  border-bottom: $border-divider;
+  @include tablet {
+    justify-content: space-between;
+    border-top: 0;
+  }
+
+  &__title {
+    @include font-pageheader;
+    margin: $mobile-before-headline 1rem;
+
+    @include tablet {
+      margin: 2.25rem 2.25rem 0 2.25rem;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50vw;
+  }
+
+  &__right {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 50vw;
+    margin-right: 3rem;
+  }
+
+  &__byline {
+    @include font-subheader;
+    @include tablet {
+      margin: 0 $tablet-between-component;
+    }
+  }
+
+  &__date {
+    @include font-labelsbuttons;
+    padding-top: 0.8rem;
+    @include tablet {
+      margin: 0 $tablet-between-component;
+      padding: 0;
+    }
+  }
+
+  &__likes {
+    @include font-labelsbuttons;
+    padding-top: 0.8rem;
+    @include tablet {
+      padding: 0;
+    }
+  }
+
+  &__views {
+    @include font-labelsbuttons;
+    @include tablet {
+      margin-right: 2.25rem;
+    }
+  }
+
+  &__paragraph {
+    margin: 0 $mobile-between-component;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    @include tablet {
+      padding: 1.1rem;
+    }
+  }
+}
