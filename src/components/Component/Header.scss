@@ -1,0 +1,87 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.header {
+    display: flex;
+    flex-direction: column;
+    margin: $mobile-between-component;
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-right: 5.9375rem;
+        @include desktop {
+            justify-content: space-around;
+        }
+    }
+
+    &__nav {
+        @include tablet {
+        display: flex;
+        flex-direction: row;
+    }
+    }
+
+  &__logo {
+    @include logo;
+    align-self: center;
+    height: 1.563rem;
+    width: 7.5rem;
+    background: white;
+    margin-bottom: $mobile-between-component;
+  }
+  &__search-input {
+    background-image: url(../../assets/images/icons/search.svg);
+    background-position: .625rem .625rem;
+    background-repeat: no-repeat;
+    padding-left: 2.1875rem;
+    @include form-field;
+    width: 12.5rem;
+    margin-bottom: $mobile-between-component;
+    @include tablet {
+        margin-right: 1.5rem;
+        width: 12.5rem;
+
+    }
+   
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include button-default;
+    border-color: $brainflix-blue;
+    align-content: center;
+    width: 100%;
+
+
+
+    &-icon {
+        position: absolute;
+        left: 1.75rem;
+        @include tablet {
+        position: relative;
+        left: -1.75rem;
+        }
+      }
+  }
+
+  
+
+}
+
+
+.empty-avatar {
+    position: absolute;
+    right: 1rem;
+    top: 3.5rem;
+    @include tablet {
+        right: 2.25rem;
+        top: 1.2rem;
+        @include desktop {
+            right: 12.5rem;
+        }
+    }
+            
+      
+}

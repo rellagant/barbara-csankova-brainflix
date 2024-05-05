@@ -83,7 +83,7 @@
 @mixin button-default {
     @include font-labelsbuttons;
     @include mobile {
-      height: 2.5rem;
+      max-height: 2.5rem;
       border-radius: 0.25rem;
       background: $primary-call-to-action;
       color: $white;
@@ -121,13 +121,13 @@
   
   @mixin form-field {
     @include mobile {
-        height: 2.25rem;
+        height: 2rem;
         border-radius: 0.25rem;
-        padding: 0.75rem;
+        // padding: 0.75rem;
         @include tablet {
-            height: 2.5rem;
+            height: 2rem;
             width: 15rem;
-            padding: 1rem;
+            // padding: 1rem;
         }
     }
   }
