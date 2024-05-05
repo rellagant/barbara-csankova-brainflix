@@ -1,7 +1,7 @@
 //media query breakpoints
-$mobile-breakpoint: 320px;
-$tablet-breakpoint: 768px;
-$desktop-breakpoint: 1280px;
+$mobile-breakpoint: 20rem;
+$tablet-breakpoint: 48rem;
+$desktop-breakpoint: 80rem;
 
 //colours <-canadian spelling
 $brainflix-black: #323232;
@@ -35,6 +35,8 @@ $mobile-between-component: 1rem;
 $tablet-before-headline: 2.25rem;
 $tablet-after-headline: 1.5rem;
 $tablet-between-component: 1.5rem;
+
+$border-divider: .0625rem solid $form-field-outline;
 
 
 
