@@ -34,7 +34,7 @@
 
   &__right {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: row-wrap;
     justify-content: flex-end;
     width: 50vw;
     margin-right: 3rem;
@@ -58,7 +58,7 @@
 
   &__likes {
     @include font-labelsbuttons;
-    padding-top: 0.8rem;
+    padding-top: 2rem;
     @include tablet {
       padding: 0;
     }
