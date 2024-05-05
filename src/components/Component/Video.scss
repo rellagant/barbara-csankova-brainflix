@@ -1,0 +1,23 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.video {
+  display: flex;
+  flex-direction: column;
+  background-color: $brainflix-darkblack;
+  max-width: 100vw;
+  max-height: 56.25vw;
+
+  @include tablet {
+    max-width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  @include desktop {
+    max-width: 70%;
+    padding-left: 15%;
+    padding-right: 15%;
+    height: auto;
+  }
+}
