@@ -16,7 +16,6 @@
 
   &__count {
     @include font-subheader;
-
   }
 
   &__input {
@@ -40,13 +39,38 @@
     width: 100%;
     height: 2.25rem;
 
-  &-text {
-    position: absolute; 
-    left: 8rem;
-}
-}
+    &-text {
+      position: absolute;
+      left: 8rem;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+  &__details {
+    display: flex;
+    flex-direction: column;
+    border-top: $border-divider;
+    margin: 1rem;
+  }
+
+  &__name {
+    @include font-subheader;
+    margin-left: 4.125rem;
+  }
+
+  &__date {
+    color: $secondary-text-color;
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__comment {
+    margin-left: 4.125rem;
+  }
 }
 
 label {
-    @include font-labelsbuttons;
-  }
+  @include font-labelsbuttons;
+}

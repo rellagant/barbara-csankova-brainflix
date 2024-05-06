@@ -11,7 +11,7 @@ import { Comments } from './components/Comments/Comments.jsx';
 // import { Avatar } from './components/Component/Avatar.jsx';
 // import AvatarImage from './assets/images/Mohan-muruge.jpg';
 
-const convertTimeStamp = (timestamp) => {
+export const convertTimeStamp = (timestamp) => {
   console.log(timestamp);
   const date = new Date(timestamp);
   const dateFormat = {
@@ -31,7 +31,7 @@ function App() {
   // const handleVideoSelect = (videoIndex) => {
   //   setCurrentVideoIndex(videoIndex);
   // }
-// console.log(video);
+
   return (
     <>
     <Header/>
@@ -52,6 +52,8 @@ function App() {
     />
 
     <Comments
+    currentVideoIndex={[0]}
+    comments={videoDetails[videoIndex].comments}
     />
 
     {/* "HI JOSEPH, do you have a technicolor dreamcoat?"

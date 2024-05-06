@@ -2,8 +2,9 @@ import "./Comments.scss";
 import { Avatar } from "../Component/Avatar";
 import AvatarImage from "../../assets/images/Mohan-muruge.jpg";
 import CommentImg from "../../assets/images/icons/add_comment.svg";
+import { convertTimeStamp } from "../../App";
 
-export function Comments() {
+export function Comments({ comments }) {
   return (
     <section className="comments">
       <div className="comments__count">3 comments</div>
@@ -26,6 +27,25 @@ export function Comments() {
           <h3 className="comments__button-text">Comment</h3>
         </button>
       </div>
+
+      {/* render comments */}
+
+      <div className="comments__container">
+        {comments.map((comment, index) => (
+          <div key={index}>
+            <Avatar src="false" alt="Nohan" />
+            <div className="comment__details">
+              <div className="comments__name">{comment.name}</div>
+              <div className="comments__date">
+                {convertTimeStamp(comment.timestamp)}
+              </div>
+              <div className="comments__comment"> {comment.comment}</div>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
+
+//what do i need from JSON? name, comment, timestamp
