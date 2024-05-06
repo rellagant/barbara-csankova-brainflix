@@ -1,6 +1,49 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-* {
-    width: 100%;
+.videos {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__header {
+    @include font-labelsbuttons;
+    margin-left: $mobile-between-component;
+  }
+
+  &__video {
+    border-radius: 0.25rem;
+    width: 6.25rem;
+    height: 3.75rem;
+    margin-left: $mobile-between-component;
+  }
+
+  &__title {
+    @include font-subheader;
+    margin-left: $mobile-between-component;
+  }
+
+  &__comment {
+    margin-left: $mobile-between-component;
+  }
+
+  &__left {
+    // display: flex;
+    flex: 0 0 auto;
+    // flex-wrap: wrap;
+    // width: 50%;
+  }
+
+  &__right {
+    // display: flex;
+    // flex-wrap: wrap;
+    // align-items: flex-end;
+    flex: 1;
+    margin-right: $mobile-between-component;
+    // width: 50%;
+  }
 }
