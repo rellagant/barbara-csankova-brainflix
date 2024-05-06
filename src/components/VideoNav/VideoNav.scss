@@ -4,6 +4,10 @@
 .videos {
   display: flex;
   flex-wrap: wrap;
+  @include tablet {
+    flex-direction: column;
+    border-top: $border-divider;
+  }
 
   &__container {
     display: flex;
@@ -13,6 +17,9 @@
   &__header {
     @include font-labelsbuttons;
     margin-left: $mobile-between-component;
+    @include tablet {
+      margin-top: 1.25rem;
+    }
   }
 
   &__video {

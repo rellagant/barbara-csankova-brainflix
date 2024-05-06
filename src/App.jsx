@@ -1,14 +1,13 @@
-import './App.scss';
-import './styles/partials/_globals.scss';
-import { Header } from './components/Component/Header.jsx';
-import { useState } from 'react';
-import videoDetails  from './data/video-details.json';
-import videos from './data/videos.json'
-import { Video } from './components/Component/Video.jsx'
-import { Article } from './components/Article/Article.jsx';
-import { Comments } from './components/Comments/Comments.jsx';
-import { VideoNav } from './components/VideoNav/VideoNav.jsx';
-
+import "./App.scss";
+import "./styles/partials/_globals.scss";
+import { Header } from "./components/Component/Header.jsx";
+import { useState } from "react";
+import videoDetails from "./data/video-details.json";
+import videos from "./data/videos.json";
+import { Video } from "./components/Component/Video.jsx";
+import { Article } from "./components/Article/Article.jsx";
+import { Comments } from "./components/Comments/Comments.jsx";
+import { VideoNav } from "./components/VideoNav/VideoNav.jsx";
 
 export const convertTimeStamp = (timestamp) => {
   console.log(timestamp);
@@ -24,56 +23,38 @@ export const convertTimeStamp = (timestamp) => {
 };
 
 function App() {
-
   const [videoIndex, setVideoIndex] = useState(0);
   const handleVideoSelect = (transformIndex) => {
     setVideoIndex(transformIndex);
-  }
+  };
 
   return (
     <>
-    <Header/>
-    <Video
-    // video={video}
-    // currentVideoIndex={[0]}
-    
-    mainPoster={videoDetails[videoIndex].image}
-    />
-    <Article
-    // currentVideoIndex={[0]}
-    title={videoDetails[videoIndex].title}
-    channel={videoDetails[videoIndex].channel}
-    date={convertTimeStamp(videoDetails[videoIndex].timestamp)}
-    views={videoDetails[videoIndex].views}
-    likes={videoDetails[videoIndex].likes}
-    description={videoDetails[videoIndex].description}
-    />
+      <Header />
+      <Video mainPoster={videoDetails[videoIndex].image} />
+      <Article
+        title={videoDetails[videoIndex].title}
+        channel={videoDetails[videoIndex].channel}
+        date={convertTimeStamp(videoDetails[videoIndex].timestamp)}
+        views={videoDetails[videoIndex].views}
+        likes={videoDetails[videoIndex].likes}
+        description={videoDetails[videoIndex].description}
+      />
 
-    <Comments
-    // currentVideoIndex={[0]}
-    comments={videoDetails[videoIndex].comments}
-    />
+      <Comments comments={videoDetails[videoIndex].comments} />
 
-    <VideoNav
-   videos={videos}
-   key={videoDetails[videoIndex].id}
-   id={videoDetails[videoIndex].id}
-   handleVideoSelect={handleVideoSelect}
-
-
-    />
-    {/* "HI JOSEPH, do you have a technicolor dreamcoat?"
-    <Avatar src={AvatarImage} alt="User Avatar" /> 
-    <Avatar/> */}
+      <VideoNav
+        videos={videos}
+        key={videoDetails[videoIndex].id}
+        id={videoDetails[videoIndex].id}
+        handleVideoSelect={handleVideoSelect}
+      />
     </>
   );
 }
 
 export default App;
 
-
-//go back to restyle header search border - left margin on brainflix logo
-//go back to restyle mohan in avatar -- use the <> from under the header when you do
-//rename video to BEM in video component
-//redo foldering of components
+//redo foldering of components -- I didn't realize each component needed its own folder, sometimes I interpret things very literally
+//Nohan component needs to be fixed in the next Sprint
 

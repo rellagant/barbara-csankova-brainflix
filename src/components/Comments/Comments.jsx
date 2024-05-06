@@ -8,8 +8,10 @@ export function Comments({ comments }) {
   return (
     <section className="comments">
       <div className="comments__count">3 comments</div>
+      <div className="comments__box">
       <Avatar src={AvatarImage} alt="User Avatar" />
-
+     
+      
       <label htmlFor="comments__label">Join the Conversation</label>
       <div className="comments__form">
         <input
@@ -26,6 +28,7 @@ export function Comments({ comments }) {
           />
           <h3 className="comments__button-text">Comment</h3>
         </button>
+        </div>
       </div>
 
       {/* render comments */}
