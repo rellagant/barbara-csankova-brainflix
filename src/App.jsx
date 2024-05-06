@@ -7,15 +7,13 @@ import videos from './data/videos.json'
 import { Video } from './components/Component/Video.jsx'
 import { Article } from './components/Article/Article.jsx';
 import { Comments } from './components/Comments/Comments.jsx';
+import { VideoNav } from './components/VideoNav/VideoNav.jsx';
 
-// import { Avatar } from './components/Component/Avatar.jsx';
-// import AvatarImage from './assets/images/Mohan-muruge.jpg';
 
 export const convertTimeStamp = (timestamp) => {
   console.log(timestamp);
   const date = new Date(timestamp);
   const dateFormat = {
-    // weekday: "short",
     month: "2-digit",
     day: "2-digit",
     year: "numeric",
@@ -28,21 +26,21 @@ export const convertTimeStamp = (timestamp) => {
 function App() {
 
   const [videoIndex, setVideoIndex] = useState(0);
-  // const handleVideoSelect = (videoIndex) => {
-  //   setCurrentVideoIndex(videoIndex);
-  // }
+  const handleVideoSelect = (transformIndex) => {
+    setVideoIndex(transformIndex);
+  }
 
   return (
     <>
     <Header/>
     <Video
     // video={video}
-    currentVideoIndex={[0]}
-    // handleVideoSelect={handleVideoSelect}
+    // currentVideoIndex={[0]}
+    
     mainPoster={videoDetails[videoIndex].image}
     />
     <Article
-    currentVideoIndex={[0]}
+    // currentVideoIndex={[0]}
     title={videoDetails[videoIndex].title}
     channel={videoDetails[videoIndex].channel}
     date={convertTimeStamp(videoDetails[videoIndex].timestamp)}
@@ -52,10 +50,18 @@ function App() {
     />
 
     <Comments
-    currentVideoIndex={[0]}
+    // currentVideoIndex={[0]}
     comments={videoDetails[videoIndex].comments}
     />
 
+    <VideoNav
+   videos={videos}
+   key={videoDetails[videoIndex].id}
+   id={videoDetails[videoIndex].id}
+   handleVideoSelect={handleVideoSelect}
+
+
+    />
     {/* "HI JOSEPH, do you have a technicolor dreamcoat?"
     <Avatar src={AvatarImage} alt="User Avatar" /> 
     <Avatar/> */}
