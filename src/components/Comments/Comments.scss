@@ -21,7 +21,7 @@
 
   &__input {
     @include form-field;
-    border-color: $form-field-outline;
+    border: $border-divider;
     background: $form-field-background;
     width: 14.6875rem;
     padding: 0rem 1.5rem 3rem 0;
@@ -36,7 +36,7 @@
     display: flex;
     align-items: center;
     @include button-default;
-    border: $brainflix-blue;
+    border: none;
     width: 100%;
     height: 2.25rem;
 

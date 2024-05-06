@@ -16,7 +16,7 @@ export function VideoNav({ videos, id, handleVideoSelect }) {
 
               <div className="videos__right">
               <h2 className="videos__title">{video.title}</h2>
-              <div class="videos__comment">{video.channel}</div>
+              <div className="videos__comment">{video.channel}</div>
               </div>
             </div>
           );
@@ -26,4 +26,4 @@ export function VideoNav({ videos, id, handleVideoSelect }) {
   );
 }
 
-
+// don't need a return

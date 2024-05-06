@@ -4,7 +4,9 @@
 
 body {
     margin: 0;
-    @include font-bodycopy;
+    font-family: $font-local;
     color: $primary-text-color;
     background: $background-color;
   }
+
+  //links - text decoration none, searches, buttons, list items (removes styles)

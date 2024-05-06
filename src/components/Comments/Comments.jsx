@@ -18,7 +18,7 @@ export function Comments({ comments }) {
           className="comments__input"
           type="text"
           placeholder="Add a new comment"
-        />
+        />   
 
         <button className="comments__button" type="submit">
           <img

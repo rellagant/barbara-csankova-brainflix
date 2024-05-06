@@ -39,7 +39,7 @@
     background-repeat: no-repeat;
     background-color: $form-field-background;
     padding-left: 2.1875rem;
-    border-color: $form-field-outline;
+    border: $border-divider;
     @include form-field;
     width: 12.5rem;
     margin-bottom: $mobile-between-component;
@@ -54,7 +54,7 @@
     align-items: center;
     justify-content: center;
     @include button-default;
-    border-color: $brainflix-blue;
+    border: none;
     align-content: center;
     width: 100%;
 
