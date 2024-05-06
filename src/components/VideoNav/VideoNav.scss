@@ -32,18 +32,11 @@
   }
 
   &__left {
-    // display: flex;
     flex: 0 0 auto;
-    // flex-wrap: wrap;
-    // width: 50%;
   }
 
   &__right {
-    // display: flex;
-    // flex-wrap: wrap;
-    // align-items: flex-end;
     flex: 1;
     margin-right: $mobile-between-component;
-    // width: 50%;
   }
 }
