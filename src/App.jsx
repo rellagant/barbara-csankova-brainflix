@@ -1,10 +1,10 @@
 import "./App.scss";
 import "./styles/partials/_globals.scss";
-import { Header } from "./components/Component/Header.jsx";
+import { Header } from "./components/Header/Header.jsx";
 import { useState } from "react";
 import videoDetails from "./data/video-details.json";
 import videos from "./data/videos.json";
-import { Video } from "./components/Component/Video.jsx";
+import { Video } from "./components/Video/Video.jsx";
 import { Article } from "./components/Article/Article.jsx";
 import { Comments } from "./components/Comments/Comments.jsx";
 import { VideoNav } from "./components/VideoNav/VideoNav.jsx";

@@ -1,5 +1,5 @@
 import "./Comments.scss";
-import { Avatar } from "../Component/Avatar";
+import { Avatar } from "../Avatar/Avatar";
 import AvatarImage from "../../assets/images/Mohan-muruge.jpg";
 import CommentImg from "../../assets/images/icons/add_comment.svg";
 import { convertTimeStamp } from "../../App";
