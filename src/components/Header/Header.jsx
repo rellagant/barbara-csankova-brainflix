@@ -1,6 +1,6 @@
 import "./Header.scss";
 import LogoImg from "../../assets/images/icons/BrainFlix-logo.svg";
-import { Avatar } from "../../components/Component/Avatar";
+import { Avatar } from "../Avatar/Avatar";
 import UploadImg from "../../assets/images/icons/upload.svg";
 
 export function Header() {
