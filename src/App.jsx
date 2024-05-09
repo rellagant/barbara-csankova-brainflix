@@ -8,7 +8,7 @@ import { Video } from "./components/Video/Video.jsx";
 import { Article } from "./components/Article/Article.jsx";
 import { Comments } from "./components/Comments/Comments.jsx";
 import { VideoNav } from "./components/VideoNav/VideoNav.jsx";
-// import { UploadVideo } from "./components/UploadVideo/UploadVideo.jsx";
+import { UploadVideo } from "./components/UploadVideo/UploadVideo.jsx";
 
 export const convertTimeStamp = (timestamp) => {
   console.log(timestamp);
@@ -51,7 +51,7 @@ function App() {
         handleVideoSelect={handleVideoSelect}
       />
 
-      {/* <UploadVideo /> */}
+      <UploadVideo />
     </>
   );
 }
