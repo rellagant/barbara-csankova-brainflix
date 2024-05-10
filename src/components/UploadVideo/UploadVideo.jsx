@@ -5,10 +5,16 @@ import upIcon from "../../assets/images/icons/publish.svg"
 export function UploadVideo() {
   return (
     <section className="upload">
-      <h1 className="upload__title">Upload Video</h1>
+
+       
+          <h1 className="upload__title">Upload Video</h1>
+          <div className="upload__container">
+        <div class="upload__container-left">
       <label classname="upload__label">Video Thumbnail</label>
       <img src={preview} alt="" className="upload__image" />
+    </div>
 
+    <div class="upload__container-right">
       <form>
         <div className="upload__container-top">
           <label htmlFor="video-title">Title Your Video</label>
@@ -20,6 +26,7 @@ export function UploadVideo() {
             name="video-title"
           />
         </div>
+        
 
         <div className="upload__container-bottom">
           <label htmlFor="video-description">Add a Video Description</label>
@@ -47,6 +54,8 @@ export function UploadVideo() {
           </button>
         </div>
       </form>
+      </div>
+      </div>
     </section>
   );
 }
