@@ -13,7 +13,7 @@ function App() {
       <Route path="/" element={ <Home/> } />
       <Route path="upload" element={ <UploadPage/> } />
       <Route path="/:id" element={<Home />} />
-      <Route path="/*" element={NoPageHere}/>
+      {/* <Route path="/*" element={NoPageHere}/> */}
       </Routes>
     </BrowserRouter>
   );
