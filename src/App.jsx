@@ -1,6 +1,6 @@
 import "./App.scss";
 import "./styles/partials/_globals.scss";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header/Header.jsx";
 import { Home } from "./pages/Home/Home.jsx";
 import { UploadPage } from "./pages/UploadPage/UploadPage.jsx";
