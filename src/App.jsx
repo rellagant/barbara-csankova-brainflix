@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Routes>
       <Route path="/" element={ <Home/> } />
-      <Route path="upload" element={ <UploadPage/> } />
+      <Route path="/upload" element={ <UploadPage/> } />
       <Route path="/:id" element={<Home />} />
       {/* <Route path="/*" element={NoPageHere}/> */}
       </Routes>
