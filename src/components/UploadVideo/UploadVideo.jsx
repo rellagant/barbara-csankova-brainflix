@@ -39,12 +39,11 @@ export function UploadVideo() {
                 placeholder="Add a description to your video"></textarea>
             </div>
 
-            {/* <button onClick={(e) => {(notify(e))}}>Notify!</button> */}
+           
 
             <div className="upload__button-group">
               <button 
-              // onClick={notify}
-              onClick={(e) => {notify((e))}}
+              onClick={notify}
               className="upload__button-publish">
                 <img
                   className="upload__button-icon"
@@ -53,7 +52,18 @@ export function UploadVideo() {
                 />
                 <h3 className="upload__button-text">Publish</h3>
               </button>
-              <ToastContainer />
+              <ToastContainer
+              position="bottom-center"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="colored"
+              />
 
               <button
               className="upload__button-cancel">

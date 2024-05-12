@@ -3,6 +3,7 @@ import LogoImg from "../../assets/images/icons/BrianFlix-logo.svg";
 import { Avatar } from "../Avatar/Avatar";
 import UploadImg from "../../assets/images/icons/upload.svg";
 import { Link } from "react-router-dom";
+import AvatarImage from '../../assets/images/Mohan-muruge.jpg';
 
 
 export function Header() {
@@ -33,7 +34,7 @@ export function Header() {
           </button>
           </Link>
 
-          <Avatar/> 
+          <Avatar src={AvatarImage} /> 
         </nav>
       </header>
     </>

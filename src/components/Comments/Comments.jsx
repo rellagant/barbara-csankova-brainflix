@@ -42,7 +42,7 @@ export function Comments({ comments }) {
       <div className="comments__container">
         {comments.map((comment) => (
           <div key={comment.id}>
-            <Avatar src="false" alt="Nohan" />
+            <Avatar src={null} alt="Nohan" />
             <div className="comment__details">
               <div className="comments__name">{comment.name}</div>
               <div className="comments__date">

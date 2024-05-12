@@ -9,46 +9,47 @@ import { BrainFlixApi, apiKey } from "../../classes/brainflixapi";
 import { useParams } from "react-router-dom";
 
 export function Home() {
-
   const [videos, setVideos] = useState([]);
-    const [videoDetails, setVideoDetails] = useState({});
-    const [hasFetchError, setHasFetchError] = useState(false);
-    const { id } = useParams();
+  const [videoDetails, setVideoDetails] = useState({});
+  const [hasFetchError, setHasFetchError] = useState(false);
+  const { id } = useParams();
 
+  useEffect(() => {
+    const fetchVideos = async () => {
+      const getBrainFlixApi = new BrainFlixApi(apiKey);
 
-    useEffect(() => {
+      try {
+        const response = await getBrainFlixApi.getVideos(); //list of videos (no details)
+        setVideos(response.data);
 
-      const fetchVideos = async () => {
-        const getBrainFlixApi = new BrainFlixApi(apiKey);
+        const ichibanVideoId = response.data[0].id;
+        const hotdog = await getBrainFlixApi.getVideoDetails(
+          id || ichibanVideoId
+        ); //details of one single video
 
-        try {
-          const response = await getBrainFlixApi.getVideos(); //list of videos (no details)
-          setVideos(response.data);
-
-
-          const ichibanVideoId = response.data[0].id
-          const hotdog = await getBrainFlixApi.getVideoDetails(id || ichibanVideoId); //details of one single video
-
-          setVideoDetails(hotdog.data);
-
-        } catch(error) {
-          console.error("not for you", error);
-          setHasFetchError(true);
-        }
+        setVideoDetails(hotdog.data);
+      } catch (error) {
+        console.error("not for you", error);
+        setHasFetchError(true);
       }
-      fetchVideos();
-    }, [id])
+    };
+    fetchVideos();
+  }, [id]);
 
-    if (hasFetchError === true) {
-      return <p>Sorry, Mario but your princess is in another castle 🍄🍄🍄 Please try again later.</p>
-    }
+  if (hasFetchError === true) {
+    return (
+      <p>
+        Sorry, Mario but your princess is in another castle 🍄🍄🍄 Please try
+        again later.
+      </p>
+    );
+  }
 
-    if (videos === null) {
-      return <p>Loading⚛⚛⚛</p>;
-    }
+  if (videos === null) {
+    return <p>Loading⚛⚛⚛</p>;
+  }
 
   return (
-  
     <>
       <Video mainPoster={videoDetails.image} />
 
@@ -63,12 +64,7 @@ export function Home() {
 
       <Comments comments={videoDetails.comments} />
 
-      <VideoNav
-        videos={videos}
-        key={videoDetails.id}
-        id={videoDetails.id}
-      />
-
+      <VideoNav videos={videos} key={videoDetails.id} id={videoDetails.id} />
     </>
   );
 }
