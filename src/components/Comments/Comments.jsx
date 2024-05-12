@@ -1,6 +1,5 @@
 import "./Comments.scss";
 import { Avatar } from "../Avatar/Avatar";
-import AvatarImage from "../../assets/images/Mohan-muruge.jpg";
 import CommentImg from "../../assets/images/icons/add_comment.svg";
 import { convertTimeStamp } from "../../utils/convertTimestamp";
 
@@ -14,8 +13,12 @@ export function Comments({ comments }) {
     <section className="comments">
       <div className="comments__count">{comments.length} comments</div>
       <div className="comments__box">
-      <Avatar src={AvatarImage} alt="User Avatar" />
-     
+
+      <div className="comments__left">
+      <Avatar />
+      </div>
+
+      <div className="comments__right">
       <form>
       <label htmlFor="comments__label">Join the Conversation</label>
       <div className="comments__form">
@@ -35,6 +38,7 @@ export function Comments({ comments }) {
         </button>
         </div>
         </form>
+        </div>
       </div>
 
       {/* render comments */}
@@ -42,7 +46,7 @@ export function Comments({ comments }) {
       <div className="comments__container">
         {comments.map((comment) => (
           <div key={comment.id}>
-            <Avatar src={null} alt="Nohan" />
+            <Avatar/>
             <div className="comment__details">
               <div className="comments__name">{comment.name}</div>
               <div className="comments__date">

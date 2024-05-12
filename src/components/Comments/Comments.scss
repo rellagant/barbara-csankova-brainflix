@@ -13,18 +13,30 @@
   @include desktop {
     justify-content: space-around;
   }
-  
 
   &__count {
     @include font-subheader;
+  }
+  &__box {
+    display: flex;
+    margin-top: 2.25rem;
+  }
+
+  &__left {
+    margin-right: 1.25rem; 
+  }
+
+  &__right {
+    display: flex;
+  flex-direction: column;
   }
 
   &__input {
     @include form-field;
     border: $border-divider;
     background: $form-field-background;
-    width: 14.6875rem;
-    padding: 0rem 1.5rem 3rem 0;
+    width: 14.0625rem;
+    padding: 0rem 0rem 3.5rem 0.5rem;
     margin-bottom: $mobile-between-component;
     @include tablet {
       margin-right: 1.5rem;
@@ -37,12 +49,12 @@
     align-items: center;
     @include button-default;
     border: none;
-    width: 100%;
+    width: 14.6875rem;
     height: 2.25rem;
 
     &-text {
       position: absolute;
-      left: 8rem;
+      left: 10rem;
     }
   }
   &__container {
