@@ -1,15 +1,14 @@
 .avatar {
-  height: 2.25rem;
-  width: 2.25rem;
-  border-radius: 50%;
-  background-color: #E1E1E1;
-
   &-image {
     border-radius: 50%;
     width: 2.25rem;
     height: 2.25rem;
-    background-color: #E1E1E1;
   }
 }
 
-// come back to change background colour to variable
+.empty-avatar {
+  border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: #e1e1e1;
+}

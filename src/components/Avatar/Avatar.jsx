@@ -1,10 +1,11 @@
 import './Avatar.scss'
 
-export function Avatar ({ src, alt}) {
-    const isEmpty = !src;
+export function Avatar ({ src, alt }) {
+
     return (
-        <div className= {`avatar ${isEmpty ? 'empty-avatar' : ''}`}>
-            {isEmpty ? null : <img src={src} alt={alt} className='avatar-image' ></img>}
+        
+        <div className= {`avatar ${src ? '' : 'empty-avatar' }`}>
+            {src && <img src={src} alt={alt} className='avatar-image'/>}
             </div>
     );
 
