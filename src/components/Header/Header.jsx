@@ -1,5 +1,5 @@
 import "./Header.scss";
-import LogoImg from "../../assets/images/icons/BrainFlix-logo.svg";
+import LogoImg from "../../assets/images/icons/BrianFlix-logo.svg";
 import { Avatar } from "../Avatar/Avatar";
 import UploadImg from "../../assets/images/icons/upload.svg";
 
@@ -9,7 +9,7 @@ export function Header() {
       <header className="header">
         <div className="header__logo">
           <a href="/">
-            <img src={LogoImg} alt="Brainflix Logo" />
+            <img src={LogoImg} alt="Brianflix Logo" />
           </a>
         </div>
 
