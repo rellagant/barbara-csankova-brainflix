@@ -10,7 +10,8 @@
     justify-content: space-between;
     margin-right: 5.9375rem;
     @include desktop {
-      justify-content: space-around;
+      justify-content: space-evenly;
+      gap: 20rem;
     }
   }
 
@@ -29,7 +30,10 @@
     background: white;
     margin-bottom: $mobile-between-component;
     @include tablet {
-      margin-left: $tablet-before-headline;
+      margin-left: 1.25rem;
+      @include desktop {
+
+      }
     }
   }
   
@@ -46,6 +50,7 @@
     @include tablet {
       margin-right: 1.5rem;
       width: 12.5rem;
+      height: 2.25rem;
     }
   }
 
@@ -69,15 +74,15 @@
   }
 }
 
-.empty-avatar {
+.avatar-image {
   position: absolute;
   right: 1rem;
   top: 3.5rem;
   @include tablet {
     right: 2.25rem;
-    top: 1.3rem;
+    top: 1.09rem;
     @include desktop {
-      right: 12.5rem;
+      right: 8rem;
     }
   }
 }

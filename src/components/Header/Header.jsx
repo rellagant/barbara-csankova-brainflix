@@ -34,7 +34,7 @@ export function Header() {
           </button>
           </Link>
 
-          <Avatar src={AvatarImage} /> 
+          <Avatar src={AvatarImage} alt="Avatar Image" /> 
         </nav>
       </header>
     </>
