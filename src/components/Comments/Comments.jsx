@@ -5,13 +5,18 @@ import CommentImg from "../../assets/images/icons/add_comment.svg";
 import { convertTimeStamp } from "../../utils/convertTimestamp";
 
 export function Comments({ comments }) {
+
+  if (!comments) {
+    return null;
+  }
+
   return (
     <section className="comments">
-      <div className="comments__count">3 comments</div>
+      <div className="comments__count">{comments.length} comments</div>
       <div className="comments__box">
       <Avatar src={AvatarImage} alt="User Avatar" />
      
-      
+      <form>
       <label htmlFor="comments__label">Join the Conversation</label>
       <div className="comments__form">
         <input
@@ -29,13 +34,14 @@ export function Comments({ comments }) {
           <h3 className="comments__button-text">Comment</h3>
         </button>
         </div>
+        </form>
       </div>
 
       {/* render comments */}
 
       <div className="comments__container">
-        {comments.map((comment, index) => (
-          <div key={index}>
+        {comments.map((comment) => (
+          <div key={comment.id}>
             <Avatar src="false" alt="Nohan" />
             <div className="comment__details">
               <div className="comments__name">{comment.name}</div>
@@ -51,4 +57,3 @@ export function Comments({ comments }) {
   );
 }
 
-//what do i need from JSON? name, comment, timestamp
