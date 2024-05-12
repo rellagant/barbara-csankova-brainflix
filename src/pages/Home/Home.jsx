@@ -1,6 +1,5 @@
 import "./Home.scss";
 import { convertTimeStamp } from "../../utils/convertTimestamp";
-// import '../../styles/partials/_globals';
 import { Video } from "../../components/Video/Video";
 import { Article } from "../../components/Article/Article";
 import { Comments } from "../../components/Comments/Comments";
@@ -13,7 +12,7 @@ export function Home() {
 
   const [videos, setVideos] = useState([]);
     const [videoDetails, setVideoDetails] = useState({});
-    // const [hasFetchError, setHasFetchError] = useState(false);
+    const [hasFetchError, setHasFetchError] = useState(false);
     const { id } = useParams();
 
 
@@ -34,40 +33,42 @@ export function Home() {
 
         } catch(error) {
           console.error("not for you", error);
-          // setHasFetchError(true);
+          setHasFetchError(true);
         }
       }
       fetchVideos();
     }, [id])
-  // const [videoIndex, setVideoIndex] = useState(0);
-  // const handleVideoSelect = (transformIndex) => {
-  //   setVideoIndex(transformIndex);
-  // };
+
+    if (hasFetchError === true) {
+      return <p>Sorry, Mario but your princess is in another castle 🍄🍄🍄 Please try again later.</p>
+    }
+
+    if (videos === null) {
+      return <p>Loading⚛⚛⚛</p>;
+    }
 
   return (
   
     <>
       <Video mainPoster={videoDetails.image} />
 
-      {/* <Article
-        title={videoDetails[videoIndex].title}
-        channel={videoDetails[videoIndex].channel}
-        date={convertTimeStamp(videoDetails[videoIndex].timestamp)}
-        views={videoDetails[videoIndex].views}
-        likes={videoDetails[videoIndex].likes}
-        description={videoDetails[videoIndex].description}
+      <Article
+        title={videoDetails.title}
+        channel={videoDetails.channel}
+        date={convertTimeStamp(videoDetails.timestamp)}
+        views={videoDetails.views}
+        likes={videoDetails.likes}
+        description={videoDetails.description}
       />
 
-      <Comments comments={videoDetails[videoIndex].comments} /> */}
+      <Comments comments={videoDetails.comments} />
 
       <VideoNav
         videos={videos}
-        // key={videoDetails[videoIndex].id}
-        // id={videoDetails[videoIndex].id}
-        // handleVideoSelect={handleVideoSelect}
+        key={videoDetails.id}
+        id={videoDetails.id}
       />
 
-      {/* Everything except for header comes here from app.jsx and is replaced in app.jsx with the home route, plus the video player page stuff */}
     </>
   );
 }
