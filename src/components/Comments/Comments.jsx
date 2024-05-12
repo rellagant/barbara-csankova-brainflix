@@ -2,7 +2,7 @@ import "./Comments.scss";
 import { Avatar } from "../Avatar/Avatar";
 import AvatarImage from "../../assets/images/Mohan-muruge.jpg";
 import CommentImg from "../../assets/images/icons/add_comment.svg";
-import { convertTimeStamp } from "../../pages/Home/Home.jsx"
+import { convertTimeStamp } from "../../utils/convertTimestamp";
 
 export function Comments({ comments }) {
   return (

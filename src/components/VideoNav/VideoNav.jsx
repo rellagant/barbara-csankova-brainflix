@@ -1,6 +1,7 @@
 import "./VideoNav.scss";
+import { Link } from "react-router-dom";
 
-export function VideoNav({ videos, id, handleVideoSelect }) {
+export function VideoNav({ videos, id }) {
  
   return (
   
@@ -9,7 +10,8 @@ export function VideoNav({ videos, id, handleVideoSelect }) {
       {videos.map((video, index) => {
         if (video.id !== id) {
           return (
-            <div key={index} onClick={() => handleVideoSelect(index)} className="videos__container">
+            <Link to={`/${video.id}`} key={index} >
+            <div className="videos__container">
               <div className="videos__left">
               <img src={video.image} alt="Next Video" className="videos__video" />
               </div>
@@ -19,8 +21,10 @@ export function VideoNav({ videos, id, handleVideoSelect }) {
               <div className="videos__comment">{video.channel}</div>
               </div>
             </div>
+            </Link>
           );
         }
+        return null;
       })}
     </div>
   );
