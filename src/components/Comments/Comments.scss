@@ -6,9 +6,9 @@
   flex-direction: column;
   margin: $mobile-between-component;
   @include tablet {
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
-    margin-right: 5.9375rem;
+    margin: 2.25rem;
   }
   @include desktop {
     justify-content: space-around;
@@ -17,44 +17,63 @@
   &__count {
     @include font-subheader;
   }
+  
   &__box {
     display: flex;
     margin-top: 2.25rem;
+    @include tablet { 
+      
+    }
   }
 
   &__left {
-    margin-right: 1.25rem; 
+    margin-right: 1.25rem;
+    margin-top: 1.4rem;
   }
 
   &__right {
     display: flex;
-  flex-direction: column;
+    flex-direction: column;
+    @include tablet {
+
+    }
   }
 
   &__input {
     @include form-field;
+    @include font-bodycopy;
     border: $border-divider;
     background: $form-field-background;
-    width: 14.0625rem;
-    padding: 0rem 0rem 3.5rem 0.5rem;
+    width: 71vw;
+    padding: .2rem 0rem 3.5rem 0.5rem;
     margin-bottom: $mobile-between-component;
     @include tablet {
       margin-right: 1.5rem;
-      width: 12.5rem;
+      width: 28.4375rem;
+      padding: .7rem 0rem 0rem 0.5rem;
     }
   }
 
   &__button {
     display: flex;
+    justify-content: center;
     align-items: center;
     @include button-default;
     border: none;
-    width: 14.6875rem;
-    height: 2.25rem;
+    width: 73vw;
+    height: 2.25rem;      
+    @include tablet {
+      position: relative;
+      left: 30.8rem;
+      bottom: 3.7rem;
+    }
 
-    &-text {
+    &-icon {
       position: absolute;
-      left: 10rem;
+      left: 5rem;
+      @include tablet {
+        left: 0.4rem;
+      }
     }
   }
   &__container {

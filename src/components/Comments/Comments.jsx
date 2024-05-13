@@ -22,20 +22,19 @@ export function Comments({ comments }) {
       <form>
       <label htmlFor="comments__label">Join the Conversation</label>
       <div className="comments__form">
-        <input
+        <textarea
           className="comments__input"
           type="text"
-          placeholder="Add a new comment"
-        />   
+          rows="4"
+          placeholder="Add a new comment">
+          </textarea> 
 
         <button className="comments__button" type="submit">
           <img
             className="comments__button-icon"
             src={CommentImg}
-            alt="Comment Icon"
-          />
-          <h3 className="comments__button-text">Comment</h3>
-        </button>
+            alt="Comment Icon"/>
+              Comment </button>
         </div>
         </form>
         </div>
