@@ -91,20 +91,12 @@
         width: 9.375rem;
       }
     }
-  }
-  
-  @mixin button-hover {
-    @include font-labelsbuttons;
-    @include mobile {
-      height: 2.5rem;
-      radius: 0.25rem;
-      background: $event-hover-state;
-      color: $white;
-      @include tablet {
-        width: 9.375rem;
-      }
+    &:hover {
+      background-color: $event-hover-state;
+      cursor: pointer;
     }
   }
+  
 //32px of padding may be added for tablet/desktop buttons  
 
 @mixin logo {
@@ -123,11 +115,20 @@
     @include mobile {
         height: 2rem;
         border-radius: 0.25rem;
-        // padding: 0.75rem;
+        
         @include tablet {
             height: 2rem;
             width: 15rem;
-            // padding: 1rem;
+           
         }
     }
+    &::placeholder {
+      color: $primary-text-color;
+    }
+
+    &:focus {
+      outline: 2px solid $primary-call-to-action;
+    } 
+
+    
   }
