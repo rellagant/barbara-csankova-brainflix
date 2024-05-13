@@ -2,7 +2,7 @@ import "./Header.scss";
 import LogoImg from "../../assets/images/icons/BrianFlix-logo.svg";
 import { Avatar } from "../Avatar/Avatar";
 import UploadImg from "../../assets/images/icons/upload.svg";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import AvatarImage from '../../assets/images/Mohan-muruge.jpg';
 
 
@@ -23,7 +23,7 @@ export function Header() {
             placeholder="Search..."
           />
           
-          <Link to="/upload">
+          <NavLink to="/upload">
           <button className="header__button" type="submit">
             <img
               className="header__button-icon"
@@ -32,7 +32,7 @@ export function Header() {
             /> 
             <h3 className="header__button-text">UPLOAD</h3>
           </button>
-          </Link>
+          </NavLink>
 
           <Avatar src={AvatarImage} alt="Avatar Image" /> 
         </nav>

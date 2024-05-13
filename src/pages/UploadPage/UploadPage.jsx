@@ -9,7 +9,7 @@ export function UploadPage() {
   const navigate = useNavigate();
   const notify = (event) => {
     event.preventDefault();
-    toast.success("Brian says thanks for submitting");
+    toast.success("Great Success!");
     setTimeout(() => {
       navigate("/");
     }, 4000);
