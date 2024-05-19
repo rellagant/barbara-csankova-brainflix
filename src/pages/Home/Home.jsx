@@ -29,7 +29,7 @@ export function Home() {
 
         setVideoDetails(videoDetailsResponse.data);
       } catch (error) {
-        console.error("not for you", error);
+        console.error("Could not retrieve", error.response.data);
         setHasFetchError(true);
       }
     };
