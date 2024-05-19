@@ -22,12 +22,12 @@ export function Home() {
         const response = await getBrainFlixApi.getVideos(); //list of videos (no details)
         setVideos(response.data);
 
-        const ichibanVideoId = response.data[0].id;
-        const hotdog = await getBrainFlixApi.getVideoDetails(
-          id || ichibanVideoId
+        const firstVideoId = response.data[0].id;
+        const videoDetailsResponse = await getBrainFlixApi.getVideoDetails(
+          id || firstVideoId
         ); //details of one single video
 
-        setVideoDetails(hotdog.data);
+        setVideoDetails(videoDetailsResponse.data);
       } catch (error) {
         console.error("not for you", error);
         setHasFetchError(true);
