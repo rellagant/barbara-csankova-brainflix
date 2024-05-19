@@ -5,8 +5,9 @@ import { Article } from "../../components/Article/Article";
 import { Comments } from "../../components/Comments/Comments";
 import { VideoNav } from "../../components/VideoNav/VideoNav";
 import { useEffect, useState } from "react";
-import { BrainFlixApi, apiKey } from "../../classes/brainflixapi";
+import { BrainFlixApi } from "../../classes/brainflixapi";
 import { useParams } from "react-router-dom";
+
 
 export function Home() {
   const [videos, setVideos] = useState([]);
@@ -16,7 +17,8 @@ export function Home() {
 
   useEffect(() => {
     const fetchVideos = async () => {
-      const getBrainFlixApi = new BrainFlixApi(apiKey);
+      const getBrainFlixApi = new BrainFlixApi();
+      console.log(getBrainFlixApi);
 
       try {
         const response = await getBrainFlixApi.getVideos(); //list of videos (no details)
