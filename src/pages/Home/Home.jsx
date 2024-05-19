@@ -8,35 +8,44 @@ import { useEffect, useState } from "react";
 import { BrainFlixApi } from "../../classes/brainflixapi";
 import { useParams } from "react-router-dom";
 
-
 export function Home() {
   const [videos, setVideos] = useState([]);
   const [videoDetails, setVideoDetails] = useState({});
   const [hasFetchError, setHasFetchError] = useState(false);
   const { id } = useParams();
 
+  const getBrainFlixApi = new BrainFlixApi();
+
   useEffect(() => {
     const fetchVideos = async () => {
-      const getBrainFlixApi = new BrainFlixApi();
-      console.log(getBrainFlixApi);
-
       try {
         const response = await getBrainFlixApi.getVideos(); //list of videos (no details)
         setVideos(response.data);
-
-        const firstVideoId = response.data[0].id;
-        const videoDetailsResponse = await getBrainFlixApi.getVideoDetails(
-          id || firstVideoId
-        ); //details of one single video
-
-        setVideoDetails(videoDetailsResponse.data);
       } catch (error) {
         console.error("Could not retrieve", error.response.data);
         setHasFetchError(true);
       }
     };
     fetchVideos();
-  }, [id]);
+  }, []);
+
+  useEffect(() => {
+    const fetchVideoDetails = async () => {
+      try {
+        if (videos.length > 0) {
+          const firstVideoId = videos[0].id;
+          const response = await getBrainFlixApi.getVideoDetails(
+            id || firstVideoId
+          ); //single video withing object within array etc.
+          setVideoDetails(response.data);
+        }
+      } catch (error) {
+        console.error("Could not retrieve video details", error.response.data);
+        setHasFetchError(true);
+      }
+    };
+    fetchVideoDetails();
+  }, [videos[0], id]);
 
   if (hasFetchError === true) {
     return (
