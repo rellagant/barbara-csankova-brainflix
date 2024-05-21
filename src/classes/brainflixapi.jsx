@@ -19,4 +19,13 @@ export class BrainFlixApi {
 
     }
 
+    async uploadVideo(videoData) {
+        try {
+            return await axios.post(`${this.baseUrl}/videos`, videoData)
+        } catch (error) {
+            console.error("Error uploading video:", error);
+            throw error;
+        }
+    }
+
 }
