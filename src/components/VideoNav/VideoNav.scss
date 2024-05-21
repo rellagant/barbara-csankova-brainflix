@@ -7,6 +7,9 @@
   @include tablet {
     flex-direction: column;
     border-top: $border-divider;
+    @include desktop {
+      width: 73%;
+    }
   }
 
   &__container {
@@ -27,6 +30,7 @@
     width: 6.25rem;
     height: 3.75rem;
     margin-left: $mobile-between-component;
+    margin-bottom: 1rem;
   }
 
   &__title {
@@ -45,6 +49,6 @@
   &__right {
     flex: 1;
     margin-right: $mobile-between-component;
+    margin-bottom: 1rem;
   }
 }
-

@@ -1,0 +1,21 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.layout-container {
+  @include desktop {
+    display: flex;
+  }
+}
+
+.layout-main {
+  @include desktop {
+    flex: 1;
+    margin-right: 1rem;
+    width: 35%;
+    border-right: $border-divider;
+  }
+}
+
+.layout-aside {
+  flex: 0 0 28.3125rem;
+}

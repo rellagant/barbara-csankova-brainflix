@@ -63,19 +63,27 @@ export function Home() {
   return (
     <>
       <Video mainPoster={videoDetails.image} />
+      <div className="layout-container">
+        <main className="layout-main">
+          <Article
+            title={videoDetails.title}
+            channel={videoDetails.channel}
+            date={convertTimeStamp(videoDetails.timestamp)}
+            views={videoDetails.views}
+            likes={videoDetails.likes}
+            description={videoDetails.description}
+          />
 
-      <Article
-        title={videoDetails.title}
-        channel={videoDetails.channel}
-        date={convertTimeStamp(videoDetails.timestamp)}
-        views={videoDetails.views}
-        likes={videoDetails.likes}
-        description={videoDetails.description}
-      />
-
-      <Comments comments={videoDetails.comments} />
-
-      <VideoNav videos={videos} key={videoDetails.id} id={videoDetails.id} />
+          <Comments comments={videoDetails.comments} />
+        </main>
+        <aside className="layout-aside">
+          <VideoNav
+            videos={videos}
+            key={videoDetails.id}
+            id={videoDetails.id}
+          />
+        </aside>
+      </div>
     </>
   );
 }
