@@ -36,7 +36,7 @@ export function Home() {
           const firstVideoId = videos[0].id;
           const response = await getBrainFlixApi.getVideoDetails(
             id || firstVideoId
-          ); //single video withing object within array etc.
+          ); //single video within object within array etc.
           setVideoDetails(response.data);
         }
       } catch (error) {
