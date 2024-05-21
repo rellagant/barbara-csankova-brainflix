@@ -10,16 +10,12 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-      <Route path="/" element={ <Home/> } />
-      <Route path="/upload" element={ <UploadPage/> } />
-      <Route path="/:id" element={<Home />} />
-      {/* <Route path="/*" element={NoPageHere}/> */}
+        <Route path="/" element={<Home />} />
+        <Route path="/upload" element={<UploadPage />} />
+        <Route path="/:id" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
-
-//Nohan component needs to be fixed in the next Sprint
-//make <NoPageHere> component (have fun with it)
