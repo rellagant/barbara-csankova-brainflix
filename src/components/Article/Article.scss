@@ -1,12 +1,22 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-// * {
-//     border: 1px solid fuchsia;
-// }
+.article-title-container {
+  margin: 1rem;
+}
 
+.article-title {
+  @include font-pageheader;
+    display: block;
+    margin-left: 1rem;
+  
+    @include tablet {
+      margin: 2.25rem 2.25rem 0 2.25rem;
+    }
+}
 .article {
   display: flex;
+  justify-content: space-between;
   margin: 0 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -16,16 +26,7 @@
     justify-content: space-between;
     border-top: 0;
   }
-
-  &__title {
-    @include font-pageheader;
-    margin: $mobile-before-headline 1rem;
-
-    @include tablet {
-      margin: 2.25rem 2.25rem 0 2.25rem;
-    }
-  }
-
+ 
   &__left {
     display: flex;
     flex-wrap: wrap;
@@ -34,8 +35,8 @@
 
   &__right {
     display: flex;
-    flex-wrap: row-wrap;
-    justify-content: flex-end;
+    flex-direction: row-wrap;
+    align-items: flex-end;
     width: 50vw;
     margin-right: 3rem;
   }
@@ -78,5 +79,9 @@
     @include tablet {
       padding: 1.1rem;
     }
+    @include desktop {
+      margin: 3rem;
+    }
   }
 }
+

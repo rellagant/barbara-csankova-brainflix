@@ -12,17 +12,17 @@
   }
   @include desktop {
     justify-content: space-around;
+    margin: 0 1rem 2rem 0;
   }
 
   &__count {
     @include font-subheader;
   }
-  
+
   &__box {
     display: flex;
     margin-top: 2.25rem;
-    @include tablet { 
-      
+    @include tablet {
     }
   }
 
@@ -35,7 +35,6 @@
     display: flex;
     flex-direction: column;
     @include tablet {
-
     }
   }
 
@@ -45,12 +44,12 @@
     border: $border-divider;
     background: $form-field-background;
     width: 71vw;
-    padding: .2rem 0rem 3.5rem 0.5rem;
+    padding: 0.2rem 0rem 3.5rem 0.5rem;
     margin-bottom: $mobile-between-component;
     @include tablet {
       margin-right: 1.5rem;
       width: 28.4375rem;
-      padding: .7rem 0rem 0rem 0.5rem;
+      padding: 0.7rem 0rem 0rem 0.5rem;
     }
   }
 
@@ -61,7 +60,7 @@
     @include button-default;
     border: none;
     width: 73vw;
-    height: 2.25rem;      
+    height: 2.25rem;
     @include tablet {
       position: relative;
       left: 30.8rem;
@@ -100,6 +99,8 @@
   }
   &__comment {
     margin-left: 4.125rem;
+    padding-bottom: 1rem;
+    border-bottom: $border-divider;
   }
 }
 

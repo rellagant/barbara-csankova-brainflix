@@ -5,10 +5,12 @@ import likeIcon from "../../assets/images/icons/likes.svg";
 export function Article({ title, channel, date, views, likes, description }) {
   return (
     <>
-      <h1 className="article__title">{title}</h1>
-      <article className="article">
+      <div className="article-title-container">
+        <h1 className="article_title">{title}</h1>
+      </div>
+      <section className="article">
         <div className="article__left">
-          <div className="article__byline">{channel}</div>
+          <div className="article_byline">{channel}</div>
           <div className="article__date">{date}</div>
         </div>
 
@@ -23,8 +25,8 @@ export function Article({ title, channel, date, views, likes, description }) {
             {likes}
           </div>
         </div>
-      </article>
-      <p className="article__paragraph">{description}</p>
+      </section>
+      <p className="article_paragraph">{description}</p>
     </>
   );
 }
